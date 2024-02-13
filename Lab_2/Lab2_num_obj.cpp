@@ -1,6 +1,6 @@
 //Lab2_numobj.cpp
 /***
- * {Short Description of this lab}
+ * {This lab we create a program do display the # of bytes for our examples}
 */
 
 #include <iostream>
@@ -21,8 +21,8 @@ int main(){
     cout << "int_example: " << sizeof(int_example) << endl;
     cout << " float_example: " << sizeof(float_example) << endl;
     cout << "double_example: " << sizeof(double_example) << endl;
-    
-    
-    
+
+    cout << "char_example: " << sizeof(char_example) << endl;
+    cout << "bool_example: " << sizeof(bool_example) << endl;
 
 }
