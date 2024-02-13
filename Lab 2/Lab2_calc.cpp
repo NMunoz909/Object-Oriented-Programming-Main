@@ -8,6 +8,10 @@
 using namespace std;
 
 int main() {
+    //numerical
+    int int_x = 1;
+    int int_y = 2;
+    double double_z = 2.0;
     
 
 }
