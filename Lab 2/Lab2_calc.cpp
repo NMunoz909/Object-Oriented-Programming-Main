@@ -15,5 +15,5 @@ int main() {
 
     cout << "int divided by int: " << int_x / int_y << endl; 
     cout << "int divided by double: " << int_x / double_z << endl;
-
 }
+
