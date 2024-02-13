@@ -13,6 +13,10 @@ int main(){
     float float_example = 2.0;
     double double_example = 2.0;
     
+    //non-numerical
+    char char_example = 'a';
+    bool bool_example = true;
+    
     
 
 }
