@@ -16,3 +16,11 @@ int sumOfThree(int x, int y, int z){
     return x + y + z;    
 
 }
+
+/** division
+* @brief returns x / y
+*
+* @param x : (double)
+* @param y : (double)
+* @return double
+*/
