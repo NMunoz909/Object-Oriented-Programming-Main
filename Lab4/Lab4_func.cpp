@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstdlib>
 using namespace std;
  
 
@@ -24,3 +25,9 @@ int sumOfThree(int x, int y, int z){
 * @param y : (double)
 * @return double
 */
+
+double division(double x, double y){
+
+    return x / y;
+
+}
