@@ -65,7 +65,7 @@ string select(string func_type){
         out = "The quotient is ";
     }
     else if (func_type == "comparison"){
-        out = "The first value being greater thann the second value is";
+        out = "The first value being greater than the second value is ";
     }
     else {
         out = "Invalid function type\n";
