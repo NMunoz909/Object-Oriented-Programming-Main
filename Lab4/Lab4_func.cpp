@@ -41,14 +41,7 @@ double division(double x, double y){
 * @return false : x is less than or equal to y
 */
 bool isGreaterThan(double x, int y){
-    if (x > y){
-        return true;
-    }
-
-    else if (x <= y) {
-
-        return false;
-    }
+    return x > y;
     
 }
 
@@ -121,3 +114,5 @@ int main()
     myPrint("comparison", is_greater_out);
     return 0;
 }
+
+
