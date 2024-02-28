@@ -12,6 +12,9 @@ class RPG {
         //constructors 
         RPG();
         RPG(string name, int health, int strength, int defense, string type);
+        void setSkills();
+        void printAction(string, RPG);
+        void updateHealth(int new_health);
 
 
         //complete rest
