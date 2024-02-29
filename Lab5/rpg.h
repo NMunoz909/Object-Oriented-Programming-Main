@@ -13,9 +13,16 @@ class RPG {
         RPG();
         RPG(string name, int health, int strength, int defense, string type);
         void setSkills();
-        void printAction(string, RPG);
+        void printAction(string skill, RPG opponent);
         void updateHealth(int new_health);
+        void attack(RPG *opponent);
+        void useSkill(RPG *opponent);
 
+        bool isAive() const;
+        string getName() const;
+        int getHealth() const;
+        int getStrength() const;
+        int getDefense() const;
 
         //complete rest
 
