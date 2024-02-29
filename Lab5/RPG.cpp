@@ -3,7 +3,7 @@
 #include "rpg.h"
 
 using namespace std;
-
+// Constructs NPC 
 RPG::RPG(){
     name = "NPC";
     health = 100;
@@ -16,6 +16,7 @@ RPG::RPG(){
 
 }
 
+// Creating new placeholders for the overloaded member function
 RPG::RPG(string name, int health, int strength, int defense, string type){
     this->name = name;
     this->health = health;
@@ -25,6 +26,23 @@ RPG::RPG(string name, int health, int strength, int defense, string type){
 
     setSkills();
 
+}
+//Implementing accessor functions
+// These simply return the things they say
+string RPG::getName() const{
+    return name;
+}
+
+int RPG::getHealth() const{
+    return health;
+}
+
+int RPG::getStrength() const{
+    return strength; 
+}
+
+int RPG::getDefense() const{
+    return defense;
 }
 
 
