@@ -28,7 +28,7 @@ class RPG {
 
     private: 
         //complete rest
-        string type; //warrior, mage thief, archer
+        string type; //warrior, mage, thief, archer
         string skills[SKILL_SIZE];
         string name;
         int health;
