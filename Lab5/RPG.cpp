@@ -45,6 +45,10 @@ int RPG::getDefense() const{
     return defense;
 }
 
+/**
+ * @brief sets the skills based on the RPG's role
+ * 
+ */
 void RPG::setSkills(){
     if (type == "mage"){
         skills[0] = "fire";
@@ -62,6 +66,12 @@ void RPG::setSkills(){
 
 }
 
+/**
+ * @brief Prints along the lines of NAME used SKILL on OPPONENT
+ * 
+ * @param skill
+ * @param opponent
+*/
 void RPG::printAction(string skill, RPG opponent){
     printf("%s used %s on %s\n", name.c_str(), skill.c_str(), opponent.getName().c_str());
 }
@@ -73,5 +83,16 @@ void RPG::printAction(string skill, RPG opponent){
  * @param new_health
 */
 void RPG::updateHealth(int new_health){
-    health = new_health;
+    health = new_health; // This here reassigns health to new_health
 }
+
+/**
+ * @brief returns whether health is greater than 0
+ * 
+ * @return true
+ * @return false
+*/
+bool RPG::isAlive() const{ //YOU MUST INCLUDE CONST,as it needs to match the member function in rpg.h
+    return health > 0;
+}
+

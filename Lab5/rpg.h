@@ -17,8 +17,8 @@ class RPG {
         void updateHealth(int new_health);
         void attack(RPG *opponent);
         void useSkill(RPG *opponent);
-    
-        bool isAive() const;
+
+        bool isAlive() const;
         string getName() const;
         int getHealth() const;
         int getStrength() const;
