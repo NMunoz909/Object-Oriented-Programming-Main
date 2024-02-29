@@ -17,10 +17,9 @@ int main(){
     // CALL updateHealth(0) on either p1 and p2
     p2.updateHealth(0);
     // Print out the new health 
-    cout << p2.getHealth();
+    cout<< "p2 Health: " << p2.getHealth()<< "\n";
     // CALL isAlive() on both p1 and p2
-    p1.isAlive();
-    p2.isAlive();
+    cout << "0 if dead, 1 if alive\n" <<"p1: "<< p1.isAlive() << "\t" << "p2: "<< p2.isAlive();
 
     return 0;
 
