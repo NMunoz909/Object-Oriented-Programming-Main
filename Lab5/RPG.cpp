@@ -66,3 +66,12 @@ void RPG::printAction(string skill, RPG opponent){
     printf("%s used %s on %s\n", name.c_str(), skill.c_str(), opponent.getName().c_str());
 }
 
+
+/**
+ * @brief updates health into new_health
+ * 
+ * @param new_health
+*/
+void RPG::updateHealth(int new_health){
+    health = new_health;
+}
