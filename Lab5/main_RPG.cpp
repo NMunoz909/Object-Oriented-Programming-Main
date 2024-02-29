@@ -11,12 +11,16 @@ int main(){
     printf("Health: %i\t Strength: %i\t Defense: %i\n", p1.getHealth(), p1.getStrength(), p1.getDefense());
 
     // DO THE SAME FOR p2
+    printf("%s Current Stats\n", p2.getName().c_str());
+    printf("Health: %i\t Strength: %i\t Defense: %i\n", p2.getHealth(), p2.getStrength(), p2.getDefense());
 
     // CALL updateHealth(0) on either p1 and p2
-
+    p2.updateHealth(0);
     // Print out the new health 
-
+    cout << p2.getHealth();
     // CALL isAlive() on both p1 and p2
+    p1.isAlive();
+    p2.isAlive();
 
     return 0;
 
