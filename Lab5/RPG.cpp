@@ -96,3 +96,17 @@ bool RPG::isAlive() const{ //YOU MUST INCLUDE CONST,as it needs to match the mem
     return health > 0;
 }
 
+/**
+ * @brief attack decreases the opponent's health by(strenght-opponents defense)
+ * In other words, the opponent's defense should soften the blow from the attack
+ * 
+ * For example, if opponent's health is 100, opponent defense is 5, abd player's
+ * strength is 20, then after the attack, opponent's health should be
+ * 85 (i.e. 100-(20-5)).
+ * 
+ * First calculate the opponent's health, then use(*opponent).getUpdate(new_health)
+ * to update their health.
+*/
+void RPG::attack(RPG * opponent){
+
+}
