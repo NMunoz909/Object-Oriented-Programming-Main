@@ -135,7 +135,7 @@ void RPG::useSkill(RPG * opponent){
     int chosen_skill_index;
 
     // use a print to output "Choose a skill to use: Enter 0 or 1\n" on the terminal
-    printf("Choose a skill to use: Enter 0 or \n");
+    printf("Choose a skill to use: Enter 0 or 1\n");
     cin >> chosen_skill_index;
     // get user input and assign it to chose_skill_index
     //(e.g. cin>>)

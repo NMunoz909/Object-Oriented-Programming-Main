@@ -63,6 +63,7 @@ void gameLoop(RPG * player1, RPG * player2){
     while((*player1).isAlive(), (*player2).isAlive()){
         displayStats((*player1), (*player2));
 
+    printf("%s's turn\n", (*player1).getName().c_str());
         
     }
     
