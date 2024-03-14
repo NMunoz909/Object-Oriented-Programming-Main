@@ -61,9 +61,20 @@ void displayEnd(RPG player1, RPG player2){
 void gameLoop(RPG * player1, RPG * player2){
     //implement brief
     while((*player1).isAlive(), (*player2).isAlive()){
-        displayStats((*player1), (*player2));
+
+    displayStats((*player1), (*player2));
 
     printf("%s's turn\n", (*player1).getName().c_str());
+    (*player1).useSkill(player2);
+    cout<< "-------------------------------------\n";
+
+    displayStats((*player1), (*player2));
+
+    printf("%s's turn\n", (*player2).getName().c_str());
+    (*player2).useSkill(player1);
+    cout<< "-------------------------------------\n";
+
+
         
     }
     
@@ -71,20 +82,12 @@ void gameLoop(RPG * player1, RPG * player2){
 
 
 
-
-
-
-
-
-
-
-
 int main(){
-    RPG p1 = RPG("Wiz", 70, 45, 15, "mage");
+    RPG p1 = RPG("Wiz", 70, 45, 5, "mage");
     RPG p2 = RPG();
 
-    //gameLoop(&p1, &p2);
-    //displayEnd(p1, p2);
+    gameLoop(&p1, &p2);
+    displayEnd(p1, p2);
     
 
     return 0;
