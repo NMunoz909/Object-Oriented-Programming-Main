@@ -58,8 +58,14 @@ void displayEnd(RPG player1, RPG player2){
  *@param player1
  *@param player2
 */
-void gameLoop(RPG * player1, RPG player2){
+void gameLoop(RPG * player1, RPG * player2){
     //implement brief
+    while((*player1).isAlive(), (*player2).isAlive()){
+        displayStats((*player1), (*player2));
+
+        
+    }
+    
 }
 
 
