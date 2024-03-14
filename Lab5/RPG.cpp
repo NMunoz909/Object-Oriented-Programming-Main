@@ -144,10 +144,10 @@ void RPG::useSkill(RPG * opponent){
     // assigns the chosen_skill into a string called chosen_skill
     // no modification needed here
     //string chosen_skill = skills[chosen_skill_index];
-
+    string chosen_skill = skills[chosen_skill_index];
     // call printAction(string, RPG) and use chosen_skill and (*opponent)
     //as the parameters
-
-
+    printAction(chosen_skill, (*opponent));
     // call attack on opponent
+    attack(opponent);
 }
