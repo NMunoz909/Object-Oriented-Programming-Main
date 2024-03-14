@@ -14,6 +14,8 @@ using namespace std;
 */
 void displayStats(RPG player1, RPG player2){
     //Implement the brief
+    printf("%s health: %i  %s health: %i\n", player1.getName().c_str(), player1.getHealth(), 
+                                            player2.getName().c_str(), player2.getHealth());
 }
 
 
