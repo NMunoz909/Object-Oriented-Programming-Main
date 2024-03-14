@@ -110,6 +110,7 @@ bool RPG::isAlive() const{ //YOU MUST INCLUDE CONST,as it needs to match the mem
 void RPG::attack(RPG *opponent){
     int opp_health = (*opponent).getHealth();
     int opp_defense = (*opponent).getDefense();
+    int new_health;
 
     if((strength - opp_defense) > 0){
     int new_health = opp_health -(strength - opp_defense);
@@ -119,7 +120,6 @@ void RPG::attack(RPG *opponent){
         int new_health = opp_health - 0;
         (*opponent).updateHealth(new_health);
     }
-    
 
 }
 
