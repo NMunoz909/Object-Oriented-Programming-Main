@@ -127,13 +127,16 @@ void RPG::useSkill(RPG * opponent){
     // where i is the index given your for loop
     // Recall that SKILL_SIZE is set to 2 within RPG.H
     // The values of i should be 0<= i < SKILL_SIZE
-
+    for(int i = 0; i < SKILL_SIZE; i++){
+        printf("Skill %i: %s\n", i, skills[i].c_str());
+    }
 
     // create an int called chosen_skill_index
-
+    int chosen_skill_index;
 
     // use a print to output "Choose a skill to use: Enter 0 or 1\n" on the terminal
-
+    printf("Choose a skill to use: Enter 0 or \n");
+    cin >> chosen_skill_index;
     // get user input and assign it to chose_skill_index
     //(e.g. cin>>)
 
