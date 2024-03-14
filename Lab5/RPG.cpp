@@ -107,6 +107,44 @@ bool RPG::isAlive() const{ //YOU MUST INCLUDE CONST,as it needs to match the mem
  * First calculate the opponent's health, then use(*opponent).getUpdate(new_health)
  * to update their health.
 */
-void RPG::attack(RPG * opponent){
+void RPG::attack(RPG *opponent){
+    int opp_health = (*opponent).getHealth();
+    int opp_defense = (*opponent).getDefense();
+    int new_health = opp_health -(strength);
+    (*opponent).updateHealth(new_health);
 
+}
+
+/**
+ * @brief Promts the user to choose a skill and calls printAction() and attack()
+ * 
+ * @param opponent
+*/
+void RPG::useSkill(RPG * opponent){
+    // use a for loop to print out all the player's skill
+    // the code within your loop should be:
+    // printf("Skill %i: %s\n", i, skills[i].c_str())
+    // where i is the index given your for loop
+    // Recall that SKILL_SIZE is set to 2 within RPG.H
+    // The values of i should be 0<= i < SKILL_SIZE
+
+
+    // create an int called chosen_skill_index
+
+
+    // use a print to output "Choose a skill to use: Enter 0 or 1\n" on the terminal
+
+    // get user input and assign it to chose_skill_index
+    //(e.g. cin>>)
+
+
+    // assigns the chosen_skill into a string called chosen_skill
+    // no modification needed here
+    //string chosen_skill = skills[chosen_skill_index];
+
+    // call printAction(string, RPG) and use chosen_skill and (*opponent)
+    //as the parameters
+
+
+    // call attack on opponent
 }
