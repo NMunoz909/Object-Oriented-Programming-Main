@@ -31,7 +31,7 @@ void displayStats(RPG player1, RPG player2){
 */
 void displayEnd(RPG player1, RPG player2){
     //Implement brief
-    if(player1.getHealth() > 0){
+    if(player1.isAlive()){
         printf("%s defeated %s! Good Game!\n", player1.getName().c_str(), player2.getName().c_str());
     }
     else{
