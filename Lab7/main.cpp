@@ -36,6 +36,14 @@ void writeToFile(string filename, int * arr, int sample_size){
  * @param sample_size
 */
 void writeToFile(string filename, string * arr, int sample_size){
+    ofstream file(filename);
+
+    for(int i = 0; i < sample_size; i++){
+        file << arr[i];
+        file << "\n";
+    }
+    file.close();
+    printf("Wrote to %s\n", filename.c_str());
 
 }
 
@@ -47,7 +55,7 @@ int main() {
                                     "The", "end"};
 
     char array_char[SAMPLE_SIZE] = {'a', 'b', 'c', 'd', 'e', '0', '1', '2', '3', '4'};
-    
+
     string int_file = "array_int.csv";
     writeToFile(int_file, array_int, SAMPLE_SIZE); // arr is already a pointer
 
