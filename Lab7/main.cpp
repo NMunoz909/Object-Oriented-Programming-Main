@@ -19,8 +19,8 @@ void writeToFile(string filename, int * arr, int sample_size){
     int val;
 
     for(int i = 0; i < sample_size; i++){
-        file << arr[i];
-        file << "\n";
+        file << arr[i]; // this writes whatever is inside the array into the file
+        file << "\n"; // not to sure what this does
     }
     file.close();
     printf("Wrote to %s\n", filename.c_str());
@@ -39,8 +39,8 @@ void writeToFile(string filename, string * arr, int sample_size){
     ofstream file(filename);
 
     for(int i = 0; i < sample_size; i++){
-        file << arr[i];
-        file << "\n";
+        file << arr[i]; // this writes whatever is inside the array into the file
+        file << "\n"; // not to sure what this does
     }
     file.close();
     printf("Wrote to %s\n", filename.c_str());
@@ -55,8 +55,15 @@ void writeToFile(string filename, string * arr, int sample_size){
  * @param arr
  * @param sample_size
 */
-void writeToFile(){
-    
+void writeToFile(string filename, char * arr, int sample_size){
+    ofstream file(filename);
+
+    for(int i = 0; i < sample_size; i++){
+        file << arr[i]; // this writes whatever is inside the array into the file
+        file << "\n"; // not to sure what this does
+    }
+    file.close();
+    printf("Wrote to %s\n", filename.c_str());
 }
 
 int main() {
