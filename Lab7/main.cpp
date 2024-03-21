@@ -44,7 +44,19 @@ void writeToFile(string filename, string * arr, int sample_size){
     }
     file.close();
     printf("Wrote to %s\n", filename.c_str());
+}
 
+/**
+ * @brief writes the sample_size of number of char
+ * Example output: if n = 2 and arr = ["c","d"]
+ * c
+ * d
+ * @param filename
+ * @param arr
+ * @param sample_size
+*/
+void writeToFile(){
+    
 }
 
 int main() {
@@ -83,3 +95,4 @@ int main() {
 
     return 0;
 }
+
