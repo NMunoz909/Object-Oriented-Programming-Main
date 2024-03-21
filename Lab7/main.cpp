@@ -93,23 +93,22 @@ int main() {
 
     //CREATE a string variable as the filename and assign
     // it the value "array_str.csv"
-
+    string string_file = "array_str.csv";
 
     //CALL writeToFile using the string variable above, array_string, and SAMPLESIZE as
     //parameters
-
+    writeToFile(string_file, array_str, SAMPLE_SIZE);
 
     //CREATE a string variable as the filename and assign
     // it the value ""array_char.csv"
-
+    string char_file = "array_char.csv";
 
     //CALL writeToFile using the string variable above, array_char, and SAMPLE_SIZE as
     //parameters
-
-
+    writeToFile(char_file, array_char, SAMPLE_SIZE);
 
     //CALL readFile() on all three generated files.
-
+    readFile(int_file); readFile(string_file); readFile(char_file);
 
     return 0;
 }
