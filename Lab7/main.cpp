@@ -66,6 +66,15 @@ void writeToFile(string filename, char * arr, int sample_size){
     printf("Wrote to %s\n", filename.c_str());
 }
 
+/**
+ * @brief reads the content of any file
+ * 
+ * @param file name
+*/
+void readFile(string filename){
+    
+}
+
 int main() {
     const int SAMPLE_SIZE = 10;
     int array_int[SAMPLE_SIZE] = {1,2,3,4,5,6,7,8,9,10};
