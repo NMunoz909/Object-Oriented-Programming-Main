@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include <string>
 
 using namespace std;
 
@@ -72,7 +73,8 @@ void writeToFile(string filename, char * arr, int sample_size){
  * @param file name
 */
 void readFile(string filename){
-    
+    ifstream file(filename);
+
 }
 
 int main() {
