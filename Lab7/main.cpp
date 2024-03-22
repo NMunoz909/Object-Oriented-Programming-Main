@@ -75,8 +75,10 @@ void writeToFile(string filename, char * arr, int sample_size){
 void readFile(string filename){
     ifstream file(filename);
     string line; // this variable is needed in order to stores what is inside the actual line into this one
-    getline(file, line);// the first param is the file, the second is what we want displayed
+    while(getline(file, line)){         // the first param is the file, the second is what we want displayed
     cout << line << endl;
+}
+
 }
 
 int main() {
