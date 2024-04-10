@@ -23,3 +23,33 @@ void incVecBy10(vector<int>& v){
         v[i] += 10;
     }
 }
+
+int main(){
+    int SIZE = 5;
+    vector<int> v(SIZE);
+
+    for(int i = 0; i < SIZE; i++){
+        v[i] = 100 + i;
+    }
+
+    printf("Before Increment-------------------------------------\n");
+    printMemVec(v);
+    
+    incVecBy10(v);
+
+    printf("After Increment--------------------------------------\n");
+    printMemVec(v);
+
+    v.pop_back();
+
+    printf("After Pop---------------------------------------------\n");
+    printMemVec(v);
+
+    v.push_back(101);
+    v.push_back(102);
+
+    printf("After Push--------------------------------------------\n");
+    printMemVec(v);
+
+    return 0;
+}
