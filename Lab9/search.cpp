@@ -47,16 +47,23 @@ int iterativeSearch(vector <int>v, int elem){
 int binarySearch(vector<int> & v, int start, int end, int elem){
     //write an if statement that checks the terminating case
     //inside the if statemant return -1
-
+    if(start > end){
+        return -1;
+    }
     // instantiate the midpoint
+    int mid = (start + end)/2;
 
-
-    //Use if/else statements to do the following:
-    // 1) update end(search left half)
-
-    // 2) update start (search right half)
-
-    // 3) return mid (found the elem)
-
+    //Use if/else statements to do the following: (It made more sense to check mid first then following with the updates)
+    if(v[mid] == elem){ // here mid is compared to see if it equals elem
+        return mid;
+    }
+    else if(v[mid] >= elem){ // if it is not equal to elem we check if mid is greater than equal to elem
+        end = mid - 1; // check left half by updating end
+    }
+    else if(v[mid] <= elem ){ // else if we check the if it is less than elem
+        start = mid + 1;// check right half by updating start
+    }
     // return a recursice call to binarySearch(...) 
+    return binarySearch(v, start, end, elem);
 }
+
