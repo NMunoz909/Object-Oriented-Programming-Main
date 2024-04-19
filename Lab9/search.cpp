@@ -102,14 +102,15 @@ int main(){
         int elem = elem_to_find[i];
 
         // stopwatches the time
-        clock_t start = clock();                // start time
+        auto start = chrono::high_resolution_clock::now();                // start time
         int index_if_found = iterativeSearch(v,elem);   // call search
-        clock_t end = clock();
+        auto end = chrono::high_resolution_clock::now();
 
         //calculates the total time it took in seconds 
-        double elapsed_time_in_sec = (double(end - start)/ CLOCKS_PER_SEC);
+        auto duration = chrono::duration_cast<std::chrono::microseconds>(end - start);
 
         // prints the index and how long it took to find it
-        cout << index_if_found << ": " << elapsed_time_in_sec << endl ; 
+        cout << "Time taken by iterativeSearch "
+              << duration.count() << " microseconds" << endl; 
     }
 }
