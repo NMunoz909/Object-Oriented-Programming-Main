@@ -67,3 +67,25 @@ int binarySearch(vector<int> & v, int start, int end, int elem){
     return binarySearch(v, start, end, elem);
 }
 
+/**
+ * @brief updates V to contain the values from filename (leave as is)
+ * 
+ * It is expected that the files contain values ranging from one to
+ * one hundred million in acsending order (no duplicates)
+ * 
+ * @param filename : string 
+ * @param v : vector
+*/
+void vecGen(string filename, vector<int> & v){
+    ifstream file(filename);
+    int num;
+    v.clear();
+    while (file.is_open() && file >> num){ // 'file >> num' is to attempt to read an int from file if succesful, it ends if there is no int and once the file reaches the end
+        v.push_back(num);
+    }
+    file.close();
+}
+
+int main(){
+    
+}
