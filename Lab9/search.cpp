@@ -113,4 +113,26 @@ int main(){
         cout << "Time taken by iterativeSearch "
               << duration.count() << " microseconds" << endl; 
     }
+
+    //repeat the for loop above so that it records the time
+    // it takes for binarySearch to do the same operation
+    for(int i = 0; i < elem_to_find.size(); i++){
+        // gets the elem to search for 
+        int elem = elem_to_find[i];
+        int start_v = 0;
+        int end_v = v.size() - 1;
+
+        // stopwatches the time
+        auto start = chrono::high_resolution_clock::now();                
+        int index_if_found = binarySearch(v, start_v, end_v, elem);   
+        auto end = chrono::high_resolution_clock::now();
+
+        
+        auto duration = chrono::duration_cast<std::chrono::nanoseconds>(end - start);
+
+        
+        cout << "Time taken by binarySearch "
+              << duration.count() << " nanoseconds" << endl; 
+    }
+
 }
