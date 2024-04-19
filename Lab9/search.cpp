@@ -19,8 +19,11 @@ int iterativeSearch(vector <int>v, int elem){
 
     // inside the for loop, use an if statement to check whether the element at i (e.g. v[i]) equals elem
     // inside the if statement return 1
-
-
+    for( int i = 0; i < v.size(); i++){
+        if(v[i] == elem){
+            return i;
+        }
+    }
     // outside of the for loop return -1
-    
+    return -1;
 }
