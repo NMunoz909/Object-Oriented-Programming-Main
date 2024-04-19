@@ -53,16 +53,14 @@ int binarySearch(vector<int> & v, int start, int end, int elem){
     // instantiate the midpoint
     int mid = (start + end)/2;
 
-    //Use if/else statements to do the following: (It made more sense to check mid first then following with the updates)
-    if(v[mid] == elem){ // here mid is compared to see if it equals elem
-        return mid;
+    //Use if/else statements to do the following: 
+    if(v[mid] > elem){
+        end = mid -1;
+    }else if(v[mid] < elem){
+        start = mid + 1;
     }
-    else if(v[mid] >= elem){ // if it is not equal to elem we check if mid is greater than equal to elem
-        end = mid - 1; // check left half by updating end
-    }
-    else if(v[mid] <= elem ){ // else if we check the if it is less than elem
-        start = mid + 1;// check right half by updating start
-    }
+    else return mid;
+
     // return a recursice call to binarySearch(...) 
     return binarySearch(v, start, end, elem);
 }
@@ -87,5 +85,30 @@ void vecGen(string filename, vector<int> & v){
 }
 
 int main(){
-    
+    // populate v with 10000 sorted numbers (leave as is)
+    vector<int> v;
+    vecGen("10000_numbers.csv", v);
+
+    // test elements to search for(leave as is)
+    vector<int> elem_to_find;
+    vecGen("test_elem.csv", elem_to_find);
+
+
+    // reads through all 10 of the test_elem values and calls iterative search
+    // and records how long each search took (leave as is)
+    for(int i = 0; i < elem_to_find.size(); i++){
+        // gets the elem to search for 
+        int elem = elem_to_find[i];
+
+        // stopwatches the time
+        clock_t start = clock();                // start time
+        int index_if_found = iterativeSearch(v,elem);   // call search
+        clock_t end = clock();
+
+        //calculates the total time it took in seconds 
+        double elapsed_time_in_sec = (double(end - start)/ CLOCKS_PER_SEC);
+
+        // prints the index and how long it took to find it
+        cout << index_if_found << ": " << elapsed_time_in_sec << endl ; 
+    }
 }
