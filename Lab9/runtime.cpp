@@ -142,7 +142,7 @@ int main(){
             //get the name/size of the file and assign it to string called filename
             filename = to_string(file_sizes[i]) + "_numbers.csv";
             //call vecGen on filename and v
-
+            vecGen(filename,v);
             //print filename (this  will be good for debugging)
 
             //call times.clear() //this ensures that we reset times everytime we read a new file
