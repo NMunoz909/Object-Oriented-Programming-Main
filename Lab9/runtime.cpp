@@ -105,7 +105,19 @@ void writeTimes(string filename, const vector<double> times, const vector<int> n
     myFile.close();
     cout << "Wrote to " << filename << endl;
 }
-
+/**
+ * @brief computes the average of the elements in vector, a
+ * 
+ * @param a vector of double 
+ * @return double 
+*/
+double average(const vector<double> a){
+    int sum = 0;
+    for(int i = 0; i < a.size(); i++){
+        sum = sum + a[i];
+    }
+    return sum/a.size();
+}
 
 
 int main(){
