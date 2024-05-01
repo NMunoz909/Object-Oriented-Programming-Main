@@ -121,53 +121,74 @@ double average(const vector<double> a){
 
 
 int main(){
-    // populate v with 10000 sorted numbers (leave as is)
-    vector<int> v;
-    vecGen("10000_numbers.csv", v);
-
-    // test elements to search for(leave as is)
+    // test elements to search for 
     vector<int> elem_to_find;
     vecGen("test_elem.csv", elem_to_find);
+    // size (n) of all tests
+    vector<int> file_sizes;
+    vecGen("sizes.csv", file_sizes);
+
+    //n list of numbers
+    vector<double> v;
+
+    //results of times
+    vector<double> times;
+
+    //results of times
+    vector<double> avg;
+
+    // create a for loop to iterate through the file sizes
+        for(int i = 0; i < file_sizes.size()){
+            //get the name/size of the file and assign it to string called filename
+            filename = to_string(file_sizes[i]) + "_numbers.csv";
+            //call vecGen on filename and v
+
+            //print filename (this  will be good for debugging)
+
+            //call times.clear() //this ensures that we reset times everytime we read a new file
+
+            //create another for loop to iterate through the elements from elem_to_find
+            //the code here should be nearly identical to the code from the previous lab
+           
 
 
-    // reads through all 10 of the test_elem values and calls iterative search
-    // and records how long each search took (leave as is)
-    for(int i = 0; i < elem_to_find.size(); i++){
-        // gets the elem to search for 
-        int elem = elem_to_find[i];
 
-        // stopwatches the time
-        auto start = chrono::high_resolution_clock::now();                // start time
-        int index_if_found = iterativeSearch(v,elem);   // call search
-        auto end = chrono::high_resolution_clock::now();
 
-        //calculates the total time it took in seconds 
-        auto duration = chrono::duration_cast<std::chrono::microseconds>(end - start);
+                //append the elapsed_time_in_sec to the vector, times(hint:pushback())
+                //This code should be within the for loop that iterates
+                // through all the elements from elem_to_find
+            
 
-        // prints the index and how long it took to find it
-        cout << "Time taken by iterativeSearch "
-              << duration.count() << " microseconds" << endl; 
+
+
+            // call average on the vector, times, and save it as a double. This code should be
+            // outside the for loop that iterates through all the elements from elem_to_find
+            // but within the for loop that iterates through the file sizes
+
+
+
+            // append the double to avg. (hint : push_back())
+            // This code should be outside the for loop  that iterates through
+            // all the elements from elem_to_find
+            // but within the for loop that iterates through the file sizes 
+
+
     }
 
-    //repeat the for loop above so that it records the time
-    // it takes for binarySearch to do the same operation
-    for(int i = 0; i < elem_to_find.size(); i++){
-        // gets the elem to search for 
-        int elem = elem_to_find[i];
-        int start_v = 0;
-        int end_v = v.size() - 1;
+    //outside both for loops call writeTimes with the appropriate parameters
+    // the first parameter should be "iterativeSearch_times.csv"
+    // read the function breif to complete the rest of the parameters
 
-        // stopwatches the time
-        auto start = chrono::high_resolution_clock::now();                
-        int index_if_found = binarySearch(v, start_v, end_v, elem);   
-        auto end = chrono::high_resolution_clock::now();
 
-        
-        auto duration = chrono::duration_cast<std::chrono::nanoseconds>(end - start);
 
-        
-        cout << "Time taken by binarySearch "
-              << duration.count() << " nanoseconds" << endl; 
-    }
+    // call avg.clear() to reset avg, so we can use it for binarySearch
 
+
+    // repeat the nested for loops used for iterativeSearch, but call binarySearch instead
+
+
+
+    //outside both for loops call writeTimes with the appropriate parameters
+    // the first parameter should be ""binarySearch_times.csv"
+    // read the function brif to complete the rest of the parameters
 }
