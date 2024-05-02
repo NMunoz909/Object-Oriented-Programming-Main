@@ -15,7 +15,8 @@ using namespace std;
  * @param elem : integer to look for
  * @return int
 */
-int iterativeSearch(vector <int>v, int elem){
+template<typename T>
+int iterativeSearch(vector <T>v, int elem){
     // use a for loop where the index, i goes from 0 to the size of v
 
     // inside the for loop, use an if statement to check whether the element at i (e.g. v[i]) equals elem
@@ -45,7 +46,8 @@ int iterativeSearch(vector <int>v, int elem){
  * @param elem : integer to look for
  * @return int
 */
-int binarySearch(vector<int> & v, int start, int end, int elem){
+template<typename T>
+int binarySearch(vector<T> & v, int start, int end, int elem){
     //write an if statement that checks the terminating case
     //inside the if statemant return -1
     if(start > end){
@@ -75,7 +77,8 @@ int binarySearch(vector<int> & v, int start, int end, int elem){
  * @param filename : string 
  * @param v : vector
 */
-void vecGen(string filename, vector<int> & v){
+template<typename T>
+void vecGen(string filename, vector<T> & v){
     ifstream file(filename);
     int num;
     v.clear();
