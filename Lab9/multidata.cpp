@@ -16,7 +16,7 @@ using namespace std;
  * @return int
 */
 template<typename T>
-int iterativeSearch(vector <T>v, int elem){
+int iterativeSearch(vector <T>v, T elem){
     // use a for loop where the index, i goes from 0 to the size of v
 
     // inside the for loop, use an if statement to check whether the element at i (e.g. v[i]) equals elem
@@ -140,10 +140,12 @@ int main(){
     vector<double> d;
     vecGen("1000_doubles.csv",d);
     vector<double> double_to_find;
-    vecGen("double_to_find", double_to_find);
+    vecGen("double_to_find.csv", double_to_find);
+    // repeat the for loop above for binarySearch to search
+    // through a vector of doubles
         for(int i = 0; i < double_to_find.size(); i++){
         // gets the elem to search for 
-        int elem = elem_to_find[i];
+        int elem = double_to_find[i];
         int start_v = 0;
         int end_v = d.size() - 1;
 
