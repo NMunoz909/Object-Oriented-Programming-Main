@@ -46,7 +46,8 @@ int iterativeSearch(vector <T>v, int elem){
  * @param elem : integer to look for
  * @return int
 */
-int binarySearch(vector<int> & v, int start, int end, int elem){
+template <typename T>
+int binarySearch(vector<T> & v, int start, int end, int elem){
     //write an if statement that checks the terminating case
     //inside the if statemant return -1
     if(start > end){
@@ -183,17 +184,47 @@ int main(){
     //outside both for loops call writeTimes with the appropriate parameters
     // the first parameter should be "iterativeSearch_times.csv"
     // read the function breif to complete the rest of the parameters
+    writeTimes("iterativeSearch_times.csv", times, file_sizes);
 
 
 
     // call avg.clear() to reset avg, so we can use it for binarySearch
-
+    avg.clear();
 
     // repeat the nested for loops used for iterativeSearch, but call binarySearch instead
+        for(int i = 0; i < file_sizes.size(); i++){
+            
+            string filename = to_string(file_sizes[i]) + "_numbers.csv";
+            
+            vecGen(filename,v);
+          
+            cout << filename;
+           
+            times.clear();
+           
+        
+        for(int i = 0; i < elem_to_find.size(); i++){
+         // gets the elem to search for 
+        int elem = elem_to_find[i];
+        int start_v = 0;
+        int end_v = v.size() - 1;
 
+        // stopwatches the time
+        auto start = chrono::high_resolution_clock::now();                
+        int index_if_found = binarySearch(v, start_v, end_v, elem);   
+        auto end = chrono::high_resolution_clock::now();
 
+        
+        auto duration = chrono::duration_cast<std::chrono::nanoseconds>(end - start);
 
+        times.push_back(duration.count());
+        }
+        double v_avg = average(times);
+
+        avg.push_back(v_avg);
+    }
     //outside both for loops call writeTimes with the appropriate parameters
     // the first parameter should be ""binarySearch_times.csv"
     // read the function brif to complete the rest of the parameters
+    writeTimes("binarySearch_times.csv", times, file_sizes);
 }
