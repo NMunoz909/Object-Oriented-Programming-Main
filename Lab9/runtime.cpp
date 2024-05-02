@@ -15,7 +15,8 @@ using namespace std;
  * @param elem : integer to look for
  * @return int
 */
-int iterativeSearch(vector <int>v, int elem){
+template <typename T>
+int iterativeSearch(vector <T>v, int elem){
     // use a for loop where the index, i goes from 0 to the size of v
 
     // inside the for loop, use an if statement to check whether the element at i (e.g. v[i]) equals elem
@@ -75,7 +76,8 @@ int binarySearch(vector<int> & v, int start, int end, int elem){
  * @param filename : string 
  * @param v : vector
 */
-void vecGen(string filename, vector<int> & v){
+template <typename T>
+void vecGen(string filename, vector<T> & v){
     ifstream file(filename);
     int num;
     v.clear();
@@ -138,43 +140,46 @@ int main(){
     vector<double> avg;
 
     // create a for loop to iterate through the file sizes
-        for(int i = 0; i < file_sizes.size()){
+        for(int i = 0; i < file_sizes.size();i++){
             //get the name/size of the file and assign it to string called filename
-            filename = to_string(file_sizes[i]) + "_numbers.csv";
+            string filename = to_string(file_sizes[i]) + "_numbers.csv";
             //call vecGen on filename and v
             vecGen(filename,v);
             //print filename (this  will be good for debugging)
-
+            cout << filename;
             //call times.clear() //this ensures that we reset times everytime we read a new file
-
+            times.clear();
             //create another for loop to iterate through the elements from elem_to_find
             //the code here should be nearly identical to the code from the previous lab
-           
+           for(int i = 0; i < elem_to_find.size(); i++){
+                // gets the elem to search for 
+                int elem = elem_to_find[i];
 
+                // stopwatches the time
+                auto start = chrono::high_resolution_clock::now();                // start time
+                int index_if_found = iterativeSearch(v,elem);   // call search
+                auto end = chrono::high_resolution_clock::now();
 
-
-
+                //calculates the total time it took in seconds 
+                 auto duration = chrono::duration_cast<std::chrono::microseconds>(end - start);
                 //append the elapsed_time_in_sec to the vector, times(hint:pushback())
                 //This code should be within the for loop that iterates
                 // through all the elements from elem_to_find
-            
-
-
-
+                times.push_back(duration.count());
+                
+           }
             // call average on the vector, times, and save it as a double. This code should be
             // outside the for loop that iterates through all the elements from elem_to_find
             // but within the for loop that iterates through the file sizes
-
-
+            double v_avg = average(times);
 
             // append the double to avg. (hint : push_back())
             // This code should be outside the for loop  that iterates through
             // all the elements from elem_to_find
             // but within the for loop that iterates through the file sizes 
-
+            avg.push_back(v_avg);
 
     }
-
     //outside both for loops call writeTimes with the appropriate parameters
     // the first parameter should be "iterativeSearch_times.csv"
     // read the function breif to complete the rest of the parameters
