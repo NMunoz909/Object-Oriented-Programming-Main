@@ -147,7 +147,7 @@ int main(){
             //call vecGen on filename and v
             vecGen(filename,v);
             //print filename (this  will be good for debugging)
-            cout << filename;
+            
             //call times.clear() //this ensures that we reset times everytime we read a new file
             times.clear();
             //create another for loop to iterate through the elements from elem_to_find
@@ -184,7 +184,7 @@ int main(){
     //outside both for loops call writeTimes with the appropriate parameters
     // the first parameter should be "iterativeSearch_times.csv"
     // read the function breif to complete the rest of the parameters
-    writeTimes("iterativeSearch_times.csv", times, file_sizes);
+    writeTimes("iterativeSearch_times.csv", avg, file_sizes);
 
 
 
@@ -198,7 +198,7 @@ int main(){
             
             vecGen(filename,v);
           
-            cout << filename;
+            
            
             times.clear();
            
@@ -226,5 +226,5 @@ int main(){
     //outside both for loops call writeTimes with the appropriate parameters
     // the first parameter should be ""binarySearch_times.csv"
     // read the function brif to complete the rest of the parameters
-    writeTimes("binarySearch_times.csv", times, file_sizes);
+    writeTimes("binarySearch_times.csv", avg, file_sizes);
 }
