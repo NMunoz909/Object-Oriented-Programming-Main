@@ -137,5 +137,28 @@ int main(){
         cout << "Time taken by binarySearch "
               << duration.count() << " nanoseconds" << endl; 
     }
+    vector<double> d;
+    vecGen("1000_doubles.csv",d);
+    vector<double> double_to_find;
+    vecGen("double_to_find", double_to_find);
+        for(int i = 0; i < double_to_find.size(); i++){
+        // gets the elem to search for 
+        int elem = elem_to_find[i];
+        int start_v = 0;
+        int end_v = d.size() - 1;
+
+        // stopwatches the time
+        auto start = chrono::high_resolution_clock::now();                
+        int index_if_found = binarySearch(d, start_v, end_v, elem);   
+        auto end = chrono::high_resolution_clock::now();
+
+        
+        auto duration = chrono::duration_cast<std::chrono::nanoseconds>(end - start);
+
+        
+        cout << "Time taken by binarySearch for doubles "
+              << duration.count() << " nanoseconds" << endl;
+    }
+
 
 }
