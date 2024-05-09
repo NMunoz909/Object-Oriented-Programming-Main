@@ -1,16 +1,3 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
 #include <iostream> 
 #include "Charmander.h"
 using namespace std;

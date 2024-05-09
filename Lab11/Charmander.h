@@ -5,7 +5,7 @@
 
 #include <string>
 #include <vector>
-#include "Pokemon.cpp"
+#include "Pokemon.h"
 using namespace std;
 
 class Charmander : public Pokemon{
